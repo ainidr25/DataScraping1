@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membaca File Teks</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $.get('headline.txt', function(obj){
+                var headline = obj.split('\n')
+                var str = '';
+                // looping data headline
+                for(var i = 0; i < headline.length; i++){
+                    str += headline[i] +  '</br>';
+                }
+                $('#headline_teks').html(str);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Headline Republika Online</h1>
+    <div id="headline_teks"></div>
+</body>
+</html>
